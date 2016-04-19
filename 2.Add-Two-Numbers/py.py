@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 #coding:utf-8
 class ListNode(object):
     def __init__(self, x):
@@ -22,7 +23,7 @@ class Solution(object):
 
         carry = False
         result = LinkedList()
-        for i in range(len(list1))[::-1]:
+        for i in range(len(list1) if len(list1) > len(list2) else len(list2) ):
             A1 = ll1[i]
             if A1 == None:
                 A1 = 0
@@ -46,6 +47,7 @@ class Solution(object):
         if True == carry:
             result.append(1)
         return result.toLeetResult()
+
         
 class LinkedList(object):
 
@@ -69,6 +71,7 @@ class LinkedList(object):
                 else:
                     return None
             return pointer
+
                 
     def __setitem__(self, key, value):
         if key < 0 or key > self.len: #小于零或者大于长度
@@ -157,6 +160,7 @@ class LinkedList(object):
                 tail = item
         return head
 
+
 if __name__ == "__main__":
     l1 = [2,4,3]
     l2 = [5,6,4]
@@ -165,6 +169,6 @@ if __name__ == "__main__":
     ll2 = ListNode(2)
 
     solution = Solution()
-    print solution.addTwoNumbers(ll1, ll2).val
+    print solution.addTwoNumbers(ll1, ll2)
 
 
